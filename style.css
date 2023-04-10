@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --fuente:'League Spartan', sans-serif;
+    /* Colors */
+    /* Primary */
+    --VeryDarkMagenta: hsl(300, 43%, 22%);
+    --SoftPink: hsl(333, 80%, 67%);
+    /* Neutral */
+    --DarkGrayishMagenta: hsl(303, 10%, 53%);
+    --LightGrayishMagenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body{
+    font-family: var(--fuente);
+    font-size: 15px;
+    background-image: url(images/bg-pattern-top-desktop.svg), 
+                      url(images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+}
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 1050px;
+    display: grid;
+    grid-template-areas: 
+    "elemento1 elemento2"
+    "elemento3 elemento3";
+}
+.card__uno{
+    grid-area: elemento1; 
+    width: 525px; 
+}
+.card__uno-titulo{
+    color: var(--VeryDarkMagenta);
+    font-weight: 700;
+    font-size: 3em;
+    line-height: .9;
+}
+.card__uno-texto{
+    width: 85%;
+    color: var(--DarkGrayishMagenta);
+    line-height: 1.5;
+    font-size: 1.1em;
+}
+.card__dos{
+    grid-area: elemento2; 
+    width: 525px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card__dos-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    width: 80%;  
+    background-color: var(--LightGrayishMagenta);
+    border-radius: 5px;
+    padding: 3px 0 3px 25px;
+}
+.card__dos-cont:first-of-type{
+    margin-right: 100px;
+    margin-top: 50px;
+}
+.card__dos-cont:last-of-type{
+    margin-left: 100px;
+}
+.card__dos-cont img{
+    margin:  0px 2px;
+}
+.card__dos-cont p{
+    margin-right: 50px;
+    color:var(--VeryDarkMagenta);
+    font-weight: 600;
+}
+
+.card__tres{
+    grid-area: elemento3; 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 40px;
+}
+
+.card__tres-cont{
+    background-color: var(--VeryDarkMagenta);
+    width: 330px;
+    padding: 20px 30px;
+    border-radius: 8px;
+}
+.card__tres-cont + .card__tres-cont{
+    margin-top: 20px;
+}
+.card__tres-cont:last-of-type{
+    margin-top: 40px;
+}
+.card__tres-datos{
+    display: flex;
+    align-items: center;
+}
+.card__nombre{
+    color: var(--White);
+}
+
+.card__nombre span{
+    color: var(--SoftPink);
+    font-size: .9em;
+    font-weight: 400;
+}
+
+.card__tres-cont img{
+    width: 35px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+.card__tres-cont p{
+    color: var(--White);
+    line-height: 1.3;
+
+}
+@media (max-width:1090px){
+    body{
+        background: none;
+        
+    }
+    main{
+        height: auto;
+        
+    }
+    .card{
+        grid-template-areas: 
+    "elemento1"
+    "elemento2"
+    "elemento3";
+    width: 100%;
+    }
+    .card__uno{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .card__uno h1,p{
+        text-align: center;
+    }
+
+    .card__dos{
+        width: 100%;
+    }
+    .card__dos-cont:first-of-type{
+        margin: 0;
+    }
+    .card__dos-cont:last-of-type{
+        margin: 0px;
+    }
+
+
+    .card__tres{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card__tres-cont:last-of-type{
+        margin-top: 20px;
+    }
+}
+@media (max-width:470px){
+    .card__dos-cont{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px  0;
+    }
+    .card__dos-cont div{
+        margin: 0;
+    }
+    .card__dos-cont p{
+        margin: 0;
+        
+
+    }
+}
+
